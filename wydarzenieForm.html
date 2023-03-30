@@ -1,0 +1,21 @@
+<template>
+    <h2>Dodaj wydarzenie</h2>
+    <div class="form">
+        <lightning-input label="Nazwa" value={eventName}></lightning-input>
+        <lightning-input type="date" label="Data" value={eventDate}></lightning-input>
+        <lightning-input label="Miejsce" value={eventLocation}></lightning-input>
+        <lightning-textarea label="Opis" value={eventDescription}></lightning-textarea>
+        <lightning-button label="Dodaj" onclick={addEvent}></lightning-button>
+    </div>
+    <h2>Dodaj uczestnika</h2>
+    <div class="form">
+        <lightning-input label="Imię" value={participantFirstName}></lightning-input>
+        <lightning-input label="Nazwisko" value={participantLastName}></lightning-input>
+        <lightning-input type="date" label="Data Urodzenia" value={participantBirthdate}></lightning-input>
+        <lightning-input type="email" label="Email" value={participantEmail}></lightning-input>
+        <lightning-button label="Dodaj" onclick={addParticipant}></lightning-button>
+    </div>
+    <template if:true={error}>
+        <div class="error">{error}</div>
+    </template>
+</template>
